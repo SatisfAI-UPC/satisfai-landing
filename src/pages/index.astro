@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from "../components/Hero.astro";
+import AppFeatures from "../components/AppFeatures.astro";
+import AboutTeam from "../components/AboutTeam.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="SatisfAI">
+	<nav class="bg-cream flex justify-around items-center p-2 md:p-4">
+		<a href="#">
+			<div class="flex gap-4 items-center">
+				<img class="h-6 md:h-8  sm:h-4" src="/satisfai-logo-main.svg" alt="CitySOS Logo"/>
+				<h1 class="text-3xl font-bold text-black">SatisfAI</h1>
+			</div>
+		</a>
+	</nav>
+	<main class="grid gap-4 md:gap-8">
+		<Hero id="#top-page" />
+		<AppFeatures id="features" />
+		<AboutTeam id="about" />
+		<Footer />
+	</main>
+</Layout>

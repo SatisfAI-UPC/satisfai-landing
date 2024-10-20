@@ -1,0 +1,28 @@
+---
+import TeamMemberComponent from "./TeamMemberComponent.astro";
+
+const teamMembers = [
+
+];
+---
+
+<section class="container mx-auto px-2 py-4" id="about">
+    <div class="flex flex-col items-center justify-center">
+        <div class="grid gap-2 text-center justify-center p-4">
+            <h1 class="text-3xl md:text-5xl text-secondary font-extrabold">
+                Our Team
+            </h1>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 p-4">
+            {teamMembers.map(member => (
+                    <TeamMemberComponent
+                            photo={member.photo}
+                            name={member.name}
+                            title={member.title}
+                            description={member.description}
+                            linkedinUrl={member.linkedinLink}
+                    />
+            ))}
+        </div>
+    </div>
+</section>
