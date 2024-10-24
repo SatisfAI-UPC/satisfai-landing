@@ -1,0 +1,68 @@
+---
+const companies = [
+    {
+        id: 1,
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAwrVX5mpgihdFGepcSl1lDxwf11-BOy1UpA&s",
+    },
+    {
+        id: 2,
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu-rXrCNE1dJkYzozNTDxtZ37E4SHph6fwwg&s",
+    },
+    {
+        id: 3,
+        photo: "https://marcas-logos.net/wp-content/uploads/2020/03/ACME-logo-1.jpg",
+    },
+    {
+        id: 4,
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXYGOns7Qa5qMkzqiqBAMTbXRChfSynRYZPg&s",
+    },
+    {
+        id: 5,
+        photo: "https://i.blogs.es/0b8b8b/dribbble_acme_800_logo/1366_2000.jpg",
+    },
+    {
+        id: 6,
+        photo: "https://uspto.report/TM/88417648/mark",
+    },
+    {
+        id: 7,
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHMBdLXLLacQ4TlGq5s6YPcxtDF3p8uKkmKI0JdarWoMCHlbQAV7GL6VHavQGKxv9pIfE&usqp=CAU",
+    },
+    {
+        id: 8,
+        photo: "https://www.acmerental.com/wp-content/uploads/2024/04/ACME-logo-e1714519972669.jpg",
+    },
+];
+---
+
+<style>
+    @keyframes infinite-scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .carousel {
+        width: 100%;
+        animation: infinite-scroll 120s linear infinite;
+        display: flex;
+    }
+</style>
+
+<div class="bg-cream py-8">
+    <div class="relative overflow-hidden w-full">
+        <div class="flex gap-6 md:gap-24 carousel">
+            {companies.concat(companies).map((company, index) => (
+                    <img
+                            key={company.id + '-' + index}
+                            src={company.photo}
+                            alt={`Company logo ${company.id}`}
+                            class="w-36 h-auto object-contain"
+                    />
+            ))}
+        </div>
+    </div>
+</div>

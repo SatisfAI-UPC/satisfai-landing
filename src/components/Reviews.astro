@@ -1,0 +1,64 @@
+---
+const reviews = [
+    {
+        id: 1,
+        avatar: "https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg",
+        name: "John Nick",
+        stars: 5,
+        description: "SatisfAI transformed how we gather customer feedback. The AI-generated insights have been incredibly helpful in improving our services!"
+    },
+    {
+        id: 2,
+        avatar: "https://img.freepik.com/free-photo/selfie-portrait-videocall_23-2149186104.jpg",
+        name: "Mary Brown",
+        stars: 5,
+        description: "The dashboard is super intuitive, and the real-time insights help us stay on top of customer satisfaction. Highly recommend!"
+    },
+    {
+        id: 3,
+        avatar: "https://www.perfocal.com/blog/content/images/size/w960/2021/01/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg",
+        name: "Susan Jones",
+        stars: 5,
+        description: "Thanks to SatisfAI, we’ve seen a noticeable improvement in customer loyalty. It’s simple to use and the insights are spot-on!"
+    },
+    {
+        id: 4,
+        avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwRPWpO-12m19irKlg8znjldmcZs5PO97B6A&s",
+        name: "David Williams",
+        stars: 5,
+        description: "Creating surveys has never been easier! SatisfAI's AI-powered suggestions save us time, and the data we get has been crucial for growth."
+    },
+]
+---
+<section class="bg-cream" id="reviews">
+    <div class="container mx-auto px-8 py-20">
+        <div class="grid gap-2 text-center lg:text-start">
+            <h1 class="text-2xl md:text-3xl font-black text-primary uppercase">Testimonials</h1>
+            <p class="text-xl font-medium">Our Clients are Already Seeing Results</p>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-4">
+            {reviews.map(review =>
+                (
+                        <div class="flex gap-8 items-center p-4 md:p-8">
+                            <img
+                                    src={review.avatar}
+                                    alt={`${review.name}'s profile picture`}
+                                    class="h-16 w-16 object-cover object-center rounded-full border border-gray-300"
+                            />
+                            <div>
+                                <div class="grid md:flex gap-4 items-center">
+                                    <h1 class="text-xl font-bold">{review.name || 'Anonymous'}</h1>
+                                    <div class="flex gap-1 items-center text-contrast text-md lg:text-xl">
+                                        {[...Array(review.stars)].map((_, i) => (
+                                                <ion-icon name="star" class="text-secondary" key={i} aria-label="Star rating" />
+                                        ))}
+                                    </div>
+                                </div>
+                                {review.description && <p class="mt-2 text-gray-600 text-lg md:text-xl">"{review.description}"</p>}
+                            </div>
+                        </div>
+                )
+            )}
+        </div>
+    </div>
+</section>

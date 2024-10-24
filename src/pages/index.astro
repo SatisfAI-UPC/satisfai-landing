@@ -4,6 +4,11 @@ import Hero from "../components/Hero.astro";
 import AppFeatures from "../components/AppFeatures.astro";
 import AboutTeam from "../components/AboutTeam.astro";
 import Footer from "../components/Footer.astro";
+import Reviews from "../components/Reviews.astro";
+import CompanyCarrousel from "../components/CompanyCarrousel.astro";
+import CompanyCallToAction from "../components/CompanyCallToAction.astro";
+import Pricing from "../components/Pricing.astro";
+import CustomerCallToAction from "../components/CustomerCallToAction.astro";
 ---
 
 <Layout title="SatisfAI">
@@ -14,10 +19,24 @@ import Footer from "../components/Footer.astro";
 				<h1 class="text-3xl font-bold text-black">SatisfAI</h1>
 			</div>
 		</a>
+		<div class="grid justify-center">
+			<a href="#" target="_blank">
+				<div class="flex items-center justify-center md:justify-start w-full">
+					<button id="button" class="text-xl inline-flex items-center justify-center gap-2 px-8 py-4 bg-secondary text-white font-medium rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+						Log in
+					</button>
+				</div>
+			</a>
+		</div>
 	</nav>
 	<main class="grid gap-4 md:gap-8">
 		<Hero id="#top-page" />
+		<CompanyCarrousel />
 		<AppFeatures id="features" />
+		<Reviews id="reviews" />
+		<CompanyCallToAction id="company" />
+		<Pricing id="pricing" />
+		<CustomerCallToAction id="customer" />
 		<AboutTeam id="about" />
 		<Footer />
 	</main>

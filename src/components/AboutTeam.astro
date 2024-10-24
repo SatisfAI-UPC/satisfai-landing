@@ -1,28 +1,64 @@
 ---
-import TeamMemberComponent from "./TeamMemberComponent.astro";
-
-const teamMembers = [
-
+const members = [
+    {
+        name: "Liliana Fu Ye",
+        username: "@sayufu",
+        githubLink: "https://github.com/sayufu",
+        imageSrc: "https://avatars.githubusercontent.com/u/84975008?v=4",
+    },
+    {
+        name: "Ramiro Villanueva",
+        username: "@Ramiro-71",
+        githubLink: "https://github.com/Ramiro-71",
+        imageSrc: "https://avatars.githubusercontent.com/u/113039963?v=4",
+    },
+    {
+        name: "William Ramos",
+        username: "@William062004",
+        githubLink: "https://github.com/William062004",
+        imageSrc: "https://avatars.githubusercontent.com/u/89233287?v=4",
+    },
+    {
+        name: "Hiro Cardenas",
+        username: "@HiroCardenas",
+        githubLink: "https://github.com/HiroCardenas",
+        imageSrc: "https://avatars.githubusercontent.com/u/102072107?v=4",
+    },
 ];
 ---
 
 <section class="container mx-auto px-2 py-4" id="about">
     <div class="flex flex-col items-center justify-center">
         <div class="grid gap-2 text-center justify-center p-4">
-            <h1 class="text-3xl md:text-5xl text-secondary font-extrabold">
-                Our Team
-            </h1>
+            <h1 class="uppercase text-3xl text-primary font-bold">OUR TEAM</h1>
+            <p class="text-medium text-xl">Check out the video about out team Techmerge</p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 p-4">
-            {teamMembers.map(member => (
-                    <TeamMemberComponent
-                            photo={member.photo}
-                            name={member.name}
-                            title={member.title}
-                            description={member.description}
-                            linkedinUrl={member.linkedinLink}
-                    />
+        <div class="grid justify-center">
+            <a href="https://github.com/SatisfAI-UPC" target="_blank">
+                <div class="flex items-center justify-center md:justify-start w-full">
+                    <button id="button" class="text-xl inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white font-medium rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                        Github
+                    </button>
+                </div>
+            </a>
+        </div>
+        <iframe class="py-8 w-full h-96 px-8 lg:px-20"
+                src="https://www.youtube.com/embed/RwU7YY6emYc?si=UGjcpZnkYKuuN9ld"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+        </iframe>
+        <ul class="flex flex-wrap justify-center text-center p-4 gap-8 md:gap-16">
+            {members.map((member) => (
+                    <a href={member.githubLink} target="_blank" class="hover:scale-95 duration-200">
+                        <li class="flex flex-col justify-center gap-2 items-center">
+                            <img src={member.imageSrc} alt={`Github Profile Picture of ${member.name}`} class="w-24 h-24 rounded-full" />
+                            <h1 class="text-xl">{member.name}</h1>
+                            <p class="text-tertiary font-medium text-lg">{member.username}</p>
+                        </li>
+                    </a>
             ))}
-        </div>
+        </ul>
     </div>
 </section>

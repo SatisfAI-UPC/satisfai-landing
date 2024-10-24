@@ -1,0 +1,60 @@
+---
+const pricingPlans = [
+    {
+        title: "Free",
+        price: "$0",
+        description: "No charges",
+        features: [
+            "Share company profile",
+            "Get customer's reviews"
+        ],
+        buttonText: "Sign up",
+        buttonClass: "border-2 border-primary text-primary",
+    },
+    {
+        title: "Pro",
+        price: "S/. 7.90",
+        description: "Per month",
+        features: [
+            "All the free perks",
+            "Create unlimited surveys",
+            "Interactive dashboard",
+            "AI insights ✨"
+        ],
+        buttonText: "Get Pro",
+        buttonClass: "bg-secondary text-white",
+    },
+];
+---
+
+<section class="p-6 md:p-12">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-2">
+            PRICING
+        </h2>
+        <p class="text-lg md:text-xl text-gray-500 mb-8 font-medium">For companies</p>
+
+        <div class="grid md:grid-cols-2 gap-6 md:gap-12 md:px-48">
+            {pricingPlans.map((plan, index) => (
+                    <div class="bg-white rounded-lg shadow p-6 border border-gray-200" key={index}>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">{plan.title}</h3>
+                        <div class="text-5xl font-black text-gray-900 mb-1">{plan.price}</div>
+                        <div class="text-sm text-gray-500 mb-4">{plan.description}</div>
+
+                        <ul class="text-gray-700 mb-6">
+                            {plan.features.map((feature, index) => (
+                                    <li class="flex items-center space-x-2 mb-2" key={index}>
+                                        <ion-icon name="checkmark-circle" class="text-green-500 text-xl"></ion-icon>
+                                        <span>{feature}</span>
+                                    </li>
+                            ))}
+                        </ul>
+
+                        <button class={`w-full py-2 rounded-lg font-medium ${plan.buttonClass}`}>
+                            {plan.buttonText}
+                        </button>
+                    </div>
+            ))}
+        </div>
+    </div>
+</section>
